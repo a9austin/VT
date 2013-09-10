@@ -1,0 +1,90 @@
+﻿@model VT.Models.VTBatchModel
+
+@{
+    ViewBag.Title = "Batch Form";
+}
+
+<h2>Batch Form</h2>
+
+@using (Html.BeginForm())
+{
+        @Html.ValidationSummary()
+        <div>
+             <fieldset>
+             <table id="main_table">
+                    <tr>
+                        <td>@Html.LabelFor(m => m.SerialNumber)</td>
+                    </tr>
+                    <tr>
+                        <td>@Html.TextBoxFor(m => m.SerialNumber)</td>                        
+                    </tr>
+                    
+                    @if (Model.Go)
+                    {
+                        <tr>
+                            <td>@Html.LabelFor(m => m.EmployeeID)</td>
+                            <td>@Html.LabelFor(m => m.BatchAmount)</td>
+                        </tr>
+                        <tr>
+                            <td>@Html.EditorFor(m => m.EmployeeID, new { autocomplete = "off" })</td>
+                            <td>@Html.TextBoxFor(m => m.BatchAmount)</td>                        
+                        </tr>
+                        <tr>
+                            <td>@Html.DropDownListFor(m => m.SelectedItem, new SelectList(Model.Options, "Value", "Text"))</td>
+                        </tr>
+                    }
+
+                    <tr><td><input type="submit" value="Go" name="buttontype" class="submit_button" id="btn"/><br /><br /></td></tr>
+             </table>
+             </fieldset>
+
+             <br /> 
+            
+            
+             <div class="error_msg"><strong>
+             @if (Model.Success)
+             {
+                <font color="green">@Model.DisplayMessage</font> <br />
+                <font color="red">@Model.DisplaySerialError</font>
+             }
+             else
+             {
+                <font color="red">@Model.DisplayMessage</font>
+             }
+             </strong></div>
+
+                @if (Model.GoBatch)
+                {
+                    <fieldset>
+                    <legend>@Model.ListFields[0].HeaderName | @Model.ListFields[0].TubeType | @Model.ListFields[0].ProductLine</legend>
+                    Serial Batch<br /><br />
+                    @for (int i = 0; i < Model.SerialNumbers.Count; i++)
+                    {
+                        @Html.TextBoxFor(m => Model.SerialNumbers[i]); <br /> <br />
+                    }
+
+                    @Html.LabelFor(m => Model.PIN) @Html.PasswordFor(m => Model.PIN)
+
+                    <br /> <br />
+                    <div id="button_loc">
+                    <input type="submit" value="Submit" class="submit_button" name="buttontype"/>
+                    <input type="submit" value="Clear" name="buttontype" class="submit_button"/><br /><br />
+                    </div>
+                    </fieldset>
+                }
+                
+            @for (int i = 0; i < Model.ListFields.Count; i++)
+            {
+                @Html.HiddenFor(m => m.ListFields[i].Value);
+                @Html.HiddenFor(m => m.ListFields[i].Username);
+                @Html.HiddenFor(m => m.ListFields[i].Token);
+                @Html.HiddenFor(m => m.ListFields[i].HeaderToken);
+                @Html.HiddenFor(m => m.ListFields[i].TubeType);
+                @Html.HiddenFor(m => m.ListFields[i].Label);
+                @Html.HiddenFor(m => m.ListFields[i].isHidden);
+                @Html.HiddenFor(m => m.ListFields[i].DataType);                                                                                                                         
+            }
+
+            
+            </div>
+}

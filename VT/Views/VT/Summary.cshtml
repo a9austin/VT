@@ -1,0 +1,89 @@
+﻿<script type="text/javascript">
+    $(document).ready(function () {
+        $('input:text:first').focus();
+    });
+</script>
+@model VT.Models.VTSummaryModel
+
+@{
+    ViewBag.Title = "Summary";
+    Layout = "~/Views/Shared/_VTFormLayout.cshtml";
+}
+
+<h2>Summary</h2>
+@using (Html.BeginForm())
+{
+        @Html.ValidationSummary()
+             <fieldset>
+             <table id="main_table">
+                    <tr>
+                        <td>@Html.LabelFor(m => m.SerialNumber)</td>
+                    </tr>
+                    <tr>
+                        <td>@Html.TextBoxFor(m => m.SerialNumber)</td>
+                    </tr>
+                    <tr>
+                        <td>Show Latest @Html.RadioButtonFor(m => m.SwitchAllData, "0", new { @checked = "checked" })</td>
+                        <td>Show All @Html.RadioButtonFor(m => m.SwitchAllData, "1")</td>
+                    </tr>
+                    <tr>
+                        <td>Include Subassembly @Html.RadioButtonFor(m => m.SwitchSubAssembly, "1", new { @checked = "checked" })</td> 
+                        <td>Do not include Subassembly @Html.RadioButtonFor(m => m.SwitchSubAssembly,"0")</td>
+                    </tr>
+                    <tr><td><input type="submit" value="Go" name="buttontype" class="submit_button"/><br /><br /></td></tr>
+             </table>
+             </fieldset>
+
+             <br /> 
+    
+            <div class="error_msg"><strong>
+             @if (Model.Success)
+             {
+                <font color="green">@Model.DisplayMessage</font>
+             }
+             else
+             {
+                <font color="red">@Model.DisplayMessage</font>
+             }
+             </strong></div>
+    
+    
+             if (Model.Go)
+             {
+                 // Makes sure the return was success
+                 if (Model.ListForm[0].return_num == "0")
+                 {
+                     for (int i = 0; i < Model.ListForm.Count; i++)
+                     {
+                         using (Html.BeginForm())
+                         {
+                <fieldset>
+                <legend> @Model.ListForm[i].HeaderTitle |  @Model.ListForm[i].TubeType | @Model.ListForm[i].ProductLine </legend>    
+            
+                @for (int j = 0; j < Model.ListForm[i].FieldList.Count; j++)
+                {
+
+                    <strong>@Model.ListForm[i].FieldList[j].Label</strong> <i>@Model.ListForm[i].FieldList[j].Spec</i> @Model.ListForm[i].FieldList[j].Value
+
+                    <br />
+                    @Html.HiddenFor(m => m.ListForm[i].FieldList[j].Value);
+                    @Html.HiddenFor(m => m.ListForm[i].FieldList[j].Token);
+                }
+
+                <strong>Timestamp:</strong> @Model.ListForm[i].TimeStamp
+
+                @*@if (Model.ListForm[i].HasActivity != "")
+                {
+                     <br />
+                     <input type="submit" value="Clear" name="buttontype" class="submit_button"/><br /><br />
+                }*@
+                </fieldset>
+                }
+
+            }
+        }
+    }
+
+}
+
+<font size="1">To produce an output form refer to the VT Output Application</font-size>

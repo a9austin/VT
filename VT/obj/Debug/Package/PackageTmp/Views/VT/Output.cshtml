@@ -1,0 +1,43 @@
+﻿<script type="text/javascript">
+    $(document).ready(function () {
+        $('input:text:first').focus();
+    });
+</script>
+@model VT.Models.VTOutputModel
+
+@{
+    ViewBag.Title = "Output";
+    Layout = "~/Views/Shared/_VTFormLayout.cshtml";
+}
+
+<h2>Output</h2>
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary()
+    
+
+    <fieldset>
+    <table id="main_table">
+        <tr>
+            <td>@Html.LabelFor(m => m.SerialNumber)</td>
+            <td>@Html.LabelFor(m => m.EmployeeID)</td>
+        </tr>
+        <tr>
+            <td>@Html.TextBoxFor(m => m.SerialNumber)</td>
+            <td>@Html.EditorFor(m => m.EmployeeID)</td>
+        </tr>
+        <tr><td><input type="submit" value="Go" name="buttontype" class="submit_button"/><br /><br /></td></tr>
+    </table>
+    </fieldset>
+    <div class="error_msg"><strong>
+             @if (Model.Success)
+             {
+                <font color="green">@Model.DisplayMessage</font>
+             }
+             else
+             {
+                <font color="red">@Model.DisplayMessage</font>
+             }
+    </strong></div>
+    
+}

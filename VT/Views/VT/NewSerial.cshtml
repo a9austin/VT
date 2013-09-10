@@ -1,0 +1,44 @@
+﻿<script type="text/javascript">
+    $(document).ready(function () {
+        $('input:text:first').focus();
+    });
+</script>
+@model VT.Models.NewSerialModel
+
+@{
+    ViewBag.Title = "New Serial";
+    Layout = "~/Views/Shared/_VTFormLayout.cshtml";
+}
+
+<h2>New Serial</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary()
+    
+    @Html.DropDownListFor(m => m.SelectedItem, Model.SerialTypes)<br />
+    @Html.Label("Assembly Number")<br />
+    @Html.TextBoxFor(m => m.AssemblyNumber)<br />
+    @Html.Label("Serial Number")<br />
+    @Html.TextBoxFor(m => m.SerialNumber)<br />
+    @Html.Label("Work Station")<br />
+    @Html.TextBoxFor(m => m.WorkStation, new { @Value = Model.WorkStation })<br />
+    @Html.Label("Employee ID")<br />
+    @Html.EditorFor(m => m.EmployeeID)<br />
+    @Html.Label("PIN")<br />
+    @Html.EditorFor(m => m.Pin)<br />
+                                                                              
+    <br />                                                                                                              
+    <input type="submit" name="buttotype" value="Generate" />
+}
+
+<div class="error_msg"><strong>
+             @if (Model.Success)
+             {
+                <font color="green">@Model.DisplayMessage</font>
+             }
+             else
+             {
+                <font color="red">@Model.DisplayMessage</font>
+             }
+</strong></div>

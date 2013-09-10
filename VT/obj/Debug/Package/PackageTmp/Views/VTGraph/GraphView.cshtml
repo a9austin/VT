@@ -1,0 +1,31 @@
+﻿@model VT.Models.VTGraphModel
+
+@{
+    Layout = "~/Views/Shared/_VTFormLayout.cshtml";
+    ViewBag.Title = "GraphView";
+}
+
+<h2> GraphView </h2>
+
+@using (Html.BeginForm())
+{
+
+    @Html.LabelFor(m => m.Amount); <br />
+    @Html.TextBoxFor(m => m.Amount); <br />
+
+    @Html.LabelFor(m => m.HeaderToken); <br />
+    @Html.TextBoxFor(m => m.HeaderToken); <br />
+
+    @Html.LabelFor(m => m.DataToken); <br />
+    @Html.TextBoxFor(m => m.DataToken); <br />
+
+    @Html.LabelFor(m => m.FinalAssembly); <br />
+    @Html.TextBoxFor(m => m.FinalAssembly); <br />
+    <br />
+    <input type="submit" value="Go" class="submit_button" name="buttontype"/>
+    
+    if (Model.Go)
+    {
+        @Html.Raw(HttpUtility.HtmlDecode(Model.ChartHTML));
+    }
+}

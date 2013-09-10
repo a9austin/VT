@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="3897d0e0-6951-4a6c-a2fa-6385992985d4" name="atruong0@SL0D8WDFJM1 2013-01-22 14:35:52" runUser="VMS\atruong0" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <TestSettings name="Local" id="73ec5f96-3290-41df-b6e1-a800b2821207">
+    <Description>These are default test settings for a local test run.</Description>
+    <Deployment enabled="false" runDeploymentRoot="atruong0_SL0D8WDFJM1 2013-01-22 14_35_52">
+      <DeploymentItem filename="C:\Users\atruong0\Documents\Visual Studio 2010\Projects\VT\VT\bin\VT.dll" />
+      <DeploymentItem filename="C:\Users\atruong0\Documents\Visual Studio 2010\Projects\VT\packages\EntityFramework.4.1.10331.0\lib\EntityFramework.dll" />
+    </Deployment>
+    <Execution>
+      <TestTypeSpecific />
+      <AgentRule name="Execution Agents">
+      </AgentRule>
+    </Execution>
+  </TestSettings>
+  <Times creation="2013-01-22T14:35:52.9452201-07:00" queuing="2013-01-22T14:35:54.2022201-07:00" start="2013-01-22T14:35:54.3942201-07:00" finish="2013-01-22T14:36:36.3412201-07:00" />
+  <ResultSummary outcome="Error">
+    <Counters total="8" executed="7" passed="6" error="0" failed="0" timeout="0" aborted="1" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="1" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <RunInfos>
+      <RunInfo computerName="SL0D8WDFJM1" outcome="Error" timestamp="2013-01-22T14:36:36.3272201-07:00">
+        <Text>Test host process exited unexpectedly.</Text>
+      </RunInfo>
+    </RunInfos>
+  </ResultSummary>
+  <TestDefinitions>
+    <UnitTest name="GenerateTubePartNumberDNE" storage="c:\users\atruong0\documents\visual studio 2010\projects\vt\vttestproject\bin\debug\vttestproject.dll" id="33bc03f4-5911-abf3-3327-17c201eb4ca6">
+      <Execution id="02cb3365-8d27-4753-8a10-c7b53c6f21b6" />
+      <TestMethod codeBase="C:/Users/atruong0/Documents/Visual Studio 2010/Projects/VT/VTTestProject/bin/Debug/VTTestProject.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="VTTestProject.VTLogicModelTest, VTTestProject, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="GenerateTubePartNumberDNE" />
+    </UnitTest>
+    <UnitTest name="GetFormNanSerial" storage="c:\users\atruong0\documents\visual studio 2010\projects\vt\vttestproject\bin\debug\vttestproject.dll" id="95799223-144a-a854-d249-66bc97d29d51">
+      <Execution id="3e8589b2-2d09-4147-bdaf-90dfccc36a79" />
+      <TestMethod codeBase="C:/Users/atruong0/Documents/Visual Studio 2010/Projects/VT/VTTestProject/bin/Debug/VTTestProject.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="VTTestProject.VTLogicModelTest, VTTestProject, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="GetFormNanSerial" />
+    </UnitTest>
+    <UnitTest name="GenerateDuplicateTubeSerialTest" storage="c:\users\atruong0\documents\visual studio 2010\projects\vt\vttestproject\bin\debug\vttestproject.dll" id="9725848f-b700-87d6-99ee-e1846bd68398">
+      <Execution id="74e63c79-6e5d-47c3-88ca-2ecb91839878" />
+      <TestMethod codeBase="C:/Users/atruong0/Documents/Visual Studio 2010/Projects/VT/VTTestProject/bin/Debug/VTTestProject.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="VTTestProject.VTLogicModelTest, VTTestProject, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="GenerateDuplicateTubeSerialTest" />
+    </UnitTest>
+    <UnitTest name="GenerateTubeSerialTest" storage="c:\users\atruong0\documents\visual studio 2010\projects\vt\vttestproject\bin\debug\vttestproject.dll" id="309e52b5-e9a8-539b-3ebf-5a66cbb4d81a">
+      <Execution id="e830fa0c-4bd3-46d1-8910-65a1be38de96" />
+      <TestMethod codeBase="C:/Users/atruong0/Documents/Visual Studio 2010/Projects/VT/VTTestProject/bin/Debug/VTTestProject.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="VTTestProject.VTLogicModelTest, VTTestProject, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="GenerateTubeSerialTest" />
+    </UnitTest>
+    <UnitTest name="GetFormTest" storage="c:\users\atruong0\documents\visual studio 2010\projects\vt\vttestproject\bin\debug\vttestproject.dll" id="594fd9ed-7823-da9d-1465-bd69f2ada8dc">
+      <Execution id="5649ef7a-163b-41cf-899e-d767d7911275" />
+      <TestMethod codeBase="C:/Users/atruong0/Documents/Visual Studio 2010/Projects/VT/VTTestProject/bin/Debug/VTTestProject.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="VTTestProject.VTLogicModelTest, VTTestProject, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="GetFormTest" />
+    </UnitTest>
+    <UnitTest name="GenerateCathodeSerialTest" storage="c:\users\atruong0\documents\visual studio 2010\projects\vt\vttestproject\bin\debug\vttestproject.dll" id="e2e468b9-92f7-db72-c85c-e1b422059e2c">
+      <Execution id="0b331437-1e92-4623-b57a-3525289efc5b" />
+      <TestMethod codeBase="C:/Users/atruong0/Documents/Visual Studio 2010/Projects/VT/VTTestProject/bin/Debug/VTTestProject.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="VTTestProject.VTLogicModelTest, VTTestProject, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="GenerateCathodeSerialTest" />
+    </UnitTest>
+    <UnitTest name="GenerateDuplicateCathodeSerialTest" storage="c:\users\atruong0\documents\visual studio 2010\projects\vt\vttestproject\bin\debug\vttestproject.dll" id="af0cafd0-783b-b36f-9e62-72abf58bc4fb">
+      <Execution id="e020eb12-2203-4945-8b9d-67a08fa69a0c" />
+      <TestMethod codeBase="C:/Users/atruong0/Documents/Visual Studio 2010/Projects/VT/VTTestProject/bin/Debug/VTTestProject.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="VTTestProject.VTLogicModelTest, VTTestProject, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="GenerateDuplicateCathodeSerialTest" />
+    </UnitTest>
+    <UnitTest name="GenerateCathodePartNumberDNE" storage="c:\users\atruong0\documents\visual studio 2010\projects\vt\vttestproject\bin\debug\vttestproject.dll" id="0c7509b4-902f-4554-b735-7ec271053641">
+      <Execution id="63b635fa-ebc0-4f7a-a5e4-efaf55103f7f" />
+      <TestMethod codeBase="C:/Users/atruong0/Documents/Visual Studio 2010/Projects/VT/VTTestProject/bin/Debug/VTTestProject.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="VTTestProject.VTLogicModelTest, VTTestProject, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="GenerateCathodePartNumberDNE" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <TestEntries>
+    <TestEntry testId="309e52b5-e9a8-539b-3ebf-5a66cbb4d81a" executionId="e830fa0c-4bd3-46d1-8910-65a1be38de96" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="9725848f-b700-87d6-99ee-e1846bd68398" executionId="74e63c79-6e5d-47c3-88ca-2ecb91839878" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="e2e468b9-92f7-db72-c85c-e1b422059e2c" executionId="0b331437-1e92-4623-b57a-3525289efc5b" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="af0cafd0-783b-b36f-9e62-72abf58bc4fb" executionId="e020eb12-2203-4945-8b9d-67a08fa69a0c" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="594fd9ed-7823-da9d-1465-bd69f2ada8dc" executionId="5649ef7a-163b-41cf-899e-d767d7911275" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="95799223-144a-a854-d249-66bc97d29d51" executionId="3e8589b2-2d09-4147-bdaf-90dfccc36a79" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="33bc03f4-5911-abf3-3327-17c201eb4ca6" executionId="02cb3365-8d27-4753-8a10-c7b53c6f21b6" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="0c7509b4-902f-4554-b735-7ec271053641" executionId="63b635fa-ebc0-4f7a-a5e4-efaf55103f7f" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <Results>
+    <UnitTestResult executionId="e830fa0c-4bd3-46d1-8910-65a1be38de96" testId="309e52b5-e9a8-539b-3ebf-5a66cbb4d81a" testName="GenerateTubeSerialTest" computerName="SL0D8WDFJM1" duration="00:00:10.4369173" startTime="2013-01-22T14:35:54.5282201-07:00" endTime="2013-01-22T14:36:06.3082201-07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="e830fa0c-4bd3-46d1-8910-65a1be38de96">
+    </UnitTestResult>
+    <UnitTestResult executionId="74e63c79-6e5d-47c3-88ca-2ecb91839878" testId="9725848f-b700-87d6-99ee-e1846bd68398" testName="GenerateDuplicateTubeSerialTest" computerName="SL0D8WDFJM1" duration="00:00:00.0164361" startTime="2013-01-22T14:36:06.3272201-07:00" endTime="2013-01-22T14:36:06.3622201-07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="74e63c79-6e5d-47c3-88ca-2ecb91839878">
+    </UnitTestResult>
+    <UnitTestResult executionId="0b331437-1e92-4623-b57a-3525289efc5b" testId="e2e468b9-92f7-db72-c85c-e1b422059e2c" testName="GenerateCathodeSerialTest" computerName="SL0D8WDFJM1" duration="00:00:00.0104424" startTime="2013-01-22T14:36:06.3862201-07:00" endTime="2013-01-22T14:36:06.4012201-07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="0b331437-1e92-4623-b57a-3525289efc5b">
+    </UnitTestResult>
+    <UnitTestResult executionId="e020eb12-2203-4945-8b9d-67a08fa69a0c" testId="af0cafd0-783b-b36f-9e62-72abf58bc4fb" testName="GenerateDuplicateCathodeSerialTest" computerName="SL0D8WDFJM1" duration="00:00:00.0066578" startTime="2013-01-22T14:36:06.4282201-07:00" endTime="2013-01-22T14:36:06.4482201-07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="e020eb12-2203-4945-8b9d-67a08fa69a0c">
+    </UnitTestResult>
+    <UnitTestResult executionId="5649ef7a-163b-41cf-899e-d767d7911275" testId="594fd9ed-7823-da9d-1465-bd69f2ada8dc" testName="GetFormTest" computerName="SL0D8WDFJM1" duration="00:00:17.8586624" startTime="2013-01-22T14:36:06.4602201-07:00" endTime="2013-01-22T14:36:24.3222201-07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="5649ef7a-163b-41cf-899e-d767d7911275">
+    </UnitTestResult>
+    <UnitTestResult executionId="3e8589b2-2d09-4147-bdaf-90dfccc36a79" testId="95799223-144a-a854-d249-66bc97d29d51" testName="GetFormNanSerial" computerName="SL0D8WDFJM1" duration="00:00:00.0250882" startTime="2013-01-22T14:36:24.3492201-07:00" endTime="2013-01-22T14:36:24.3792201-07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="3e8589b2-2d09-4147-bdaf-90dfccc36a79">
+    </UnitTestResult>
+    <UnitTestResult executionId="02cb3365-8d27-4753-8a10-c7b53c6f21b6" testId="33bc03f4-5911-abf3-3327-17c201eb4ca6" testName="GenerateTubePartNumberDNE" computerName="SL0D8WDFJM1" duration="00:00:11.9470000" startTime="2013-01-22T14:36:24.3912201-07:00" endTime="2013-01-22T14:36:36.3382201-07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Aborted" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="02cb3365-8d27-4753-8a10-c7b53c6f21b6">
+    </UnitTestResult>
+    <UnitTestResult executionId="63b635fa-ebc0-4f7a-a5e4-efaf55103f7f" testId="0c7509b4-902f-4554-b735-7ec271053641" testName="GenerateCathodePartNumberDNE" computerName="SL0D8WDFJM1" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="NotExecuted" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="63b635fa-ebc0-4f7a-a5e4-efaf55103f7f">
+    </UnitTestResult>
+  </Results>
+</TestRun>

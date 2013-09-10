@@ -1,0 +1,63 @@
+﻿@*
+ * SPCGraph.cshtml
+ * Author: Austin Truong
+ * Date: 05/02/2013
+ * Varian Medical Systems
+*@
+
+
+@model VT.Models.VTSPCModel
+
+@{
+    ViewBag.Title = "SPC Graph";
+    Layout = "~/Views/Shared/_VTFormLayout.cshtml";
+}
+<h2>SPC Graph</h2>
+
+@using (Html.BeginForm())
+{
+        @Html.ValidationSummary()
+        <div>
+             <fieldset>
+             <table id="main_table">
+                    <tr>
+                        <td>@Html.LabelFor(m => m.SerialNumber)</td>
+                    </tr>
+                    <tr>
+                        <td>@Html.TextBoxFor(m => m.SerialNumber)</td>                        
+                    </tr>
+                    
+                    <tr><td><input type="submit" value="Go" name="buttontype" class="submit_button" id="btn"/><br /><br /></td></tr>
+             </table>
+             </fieldset>
+
+             <br /> 
+   
+            
+             <div class="error_msg"><strong>
+             @if (Model.Success)
+             {
+                <font color="green">@Model.DisplayMessage</font> <br />
+             }
+             else
+             {
+                <font color="red">@Model.DisplayMessage</font>
+             }
+             </strong></div>
+
+
+            <fieldset>
+
+
+            <br /> <br />
+            <div id="button_loc">
+            <input type="submit" value="Submit" class="submit_button" name="buttontype"/>
+            <input type="submit" value="Clear" name="buttontype" class="submit_button"/><br /><br />
+            </div>
+            </fieldset>
+                
+
+
+            
+            </div>
+}

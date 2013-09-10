@@ -1,0 +1,104 @@
+﻿<style>
+#output_table
+{
+    border: solid 1px;
+    border-color:Black;
+}
+
+p.pagebreak
+{
+    page-break-before:always;
+}
+
+.not_complete
+{
+    color:Red;
+    font-size:medium;   
+}
+</style>
+
+@model VT.Models.VTOutputModel
+
+@{
+    ViewBag.Title = "Output";
+}
+
+@Html.ValidationSummary()
+@Model.DisplayMessage
+
+@if (Model.Go)
+{
+    <h1> Tube Record Sheet </h1>
+    <h1> The output file is located at @Model.OutputLocation</h1>
+    <h2>@Model.ListForm[0].ProductLine</h2>
+
+    <h3>Serial Number: @Model.SerialNumber</h3>
+    <h3>Tube Type: @Model.ListForm[0].TubeType</h3>
+    
+    if (!Model.CompletedWorkflow)
+    {
+        <div class="not_complete">TUBE RECORD NOT COMPLETE</div>
+    }
+    
+    
+   
+    
+    for (int i = 0; i < Model.ListForm.Count; i++)
+    {
+        using (Html.BeginForm())
+        {
+                <fieldset>
+                <legend> <strong>@Model.ListForm[i].HeaderTitle</strong></legend>    
+            
+                @for (int j = 0; j < Model.ListForm[i].FieldList.Count; j++)
+                {
+                    // Checks so it will not print the serial number multiple times.
+                    if (Model.ListForm[i].FieldList[j].Token != "SNT")
+                    {
+                        @Model.ListForm[i].FieldList[j].Label  @Model.ListForm[i].FieldList[j].Value
+                    }
+
+                    <br />
+                    @Html.HiddenFor(m => m.ListForm[i].FieldList[j].Value);
+                    @Html.HiddenFor(m => m.ListForm[i].FieldList[j].Token);
+                }
+
+                @*@if (Model.ListForm[i].HasActivity != "")
+                {
+                     <br />
+                     <input type="submit" value="Clear" name="buttontype" class="submit_button"/><br /><br />
+                }*@
+                </fieldset>
+        }
+
+        if (i == 3)
+        {
+            <p class="pagebreak">&nbsp;</p>
+        }
+
+    }
+    
+    
+    @*<!-- Loops through the list of Forms -->
+    for (int i = 0; i < Model.ListForm.Count; i++)
+    {   <table id="output_table">
+        <!-- Loops through the FieldList in the Layout Form -->
+        @for (int j = 0; j < Model.ListForm[i].FieldList.Count; j++)
+        {
+            <tr>
+                <td>@Model.ListForm[i].FieldList[j].Label</td>
+            </tr>   
+    
+        }
+        </table>
+
+        <br /><br />
+
+        if (i == 3)
+        {
+            <p class="pagebreak"><h1>Tube Record Sheet</h1> </p>
+        }
+    }  *@
+}
+
+

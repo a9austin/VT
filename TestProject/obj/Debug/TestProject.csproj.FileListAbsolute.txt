@@ -1,0 +1,11 @@
+C:\Users\atruong0\Documents\Visual Studio 2010\Projects\VT\TestProject\bin\Debug\TestProject.dll
+C:\Users\atruong0\Documents\Visual Studio 2010\Projects\VT\TestProject\bin\Debug\TestProject.pdb
+C:\Users\atruong0\Documents\Visual Studio 2010\Projects\VT\TestProject\bin\Debug\EntityFramework.dll
+C:\Users\atruong0\Documents\Visual Studio 2010\Projects\VT\TestProject\bin\Debug\VT.dll
+C:\Users\atruong0\Documents\Visual Studio 2010\Projects\VT\TestProject\bin\Debug\VT.pdb
+C:\Users\atruong0\Documents\Visual Studio 2010\Projects\VT\TestProject\bin\Debug\EntityFramework.xml
+C:\Users\atruong0\Documents\Visual Studio 2010\Projects\VT\TestProject\bin\Debug\VT_Accessor.dll
+C:\Users\atruong0\Documents\Visual Studio 2010\Projects\VT\TestProject\bin\Debug\VT_Accessor.pdb
+C:\Users\atruong0\Documents\Visual Studio 2010\Projects\VT\TestProject\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\atruong0\Documents\Visual Studio 2010\Projects\VT\TestProject\obj\Debug\TestProject.dll
+C:\Users\atruong0\Documents\Visual Studio 2010\Projects\VT\TestProject\obj\Debug\TestProject.pdb

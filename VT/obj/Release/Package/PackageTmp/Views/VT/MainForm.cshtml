@@ -1,0 +1,166 @@
+﻿@*
+ * MainForm.cshtml
+ * Author: Austin Truong
+ * Date: 09/04/2012
+ * Varian Medical Systems
+*@
+
+
+@model VT.Models.VTViewModel
+
+@{
+    ViewBag.Title = "MainForm";
+    Layout = "~/Views/Shared/_VTFormLayout.cshtml";
+}
+
+@if (!Model.Go)
+{
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('input:text:first').focus();
+        });
+    </script>
+}
+else
+{
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('input[uifocus=focus]').focus();
+        });
+    </script>
+}
+
+<h2>Main Form</h2>
+
+@using (Html.BeginForm())
+{
+        @Html.ValidationSummary()
+     
+        <div>
+             <fieldset>
+             <table id="main_table">
+                    <tr>
+                        <td>@Html.LabelFor(m => m.SerialNumber)</td>
+                        <td>@Html.LabelFor(m => m.EmployeeID)</td>
+                    </tr>
+                    <tr>
+                        <td id="focus_here">@Html.TextBoxFor(m => m.SerialNumber)</td>
+                        <td>@Html.EditorFor(m => m.EmployeeID, new { autocomplete = "off" })</td>
+                    </tr>
+                    
+                    <tr><td><input type="submit" value="Go" name="buttontype" class="submit_button" id="btn"/><br /><br /></td></tr>
+             </table>
+             </fieldset>
+             <br /> 
+            
+            
+             <div class="error_msg"><strong>
+             @if (Model.Success)
+             {
+                <font color="green">@Model.DisplayMessage</font>
+             }
+             else
+             {
+                <font color="red">@Model.DisplayMessage</font>
+             }
+             </strong></div>
+
+                @if (Model.Go)
+                {
+                    int count = 0;
+                    <fieldset>
+                    <legend> @ViewData["HEADER"] </legend>    
+                    @for (int i = 0; i < Model.ListFields.Count; i++)
+                    {
+                        if (i == 0)
+                        {
+                            <strong>User: @Model.ListFields[0].Username</strong>
+                            <br /><br />
+                        }
+
+                        if (Model.ListFields[i].DataType == "DATA-CKBOX")
+                        {
+                            @Model.ListFields[i].Label <br />
+                            //@Html.CheckBoxFor(m => m.ListFields[i].BoolValue)
+                            if (count == 0)
+                            {   
+                                @Html.CheckBoxFor(m => m.ListFields[i].BoolValue, new { id = "focus" })<br />
+                                count++;
+                            }
+                            else
+                            {
+                                @Html.CheckBoxFor(m => m.ListFields[i].BoolValue)<br />
+                            }
+                            <br />                                                                           
+                        }
+
+                        else if (Model.ListFields[i].DataType == "DATA-RADIO")
+                        {
+                            @Model.ListFields[i].Label;
+                            for (int j = 0; j < Model.ListFields[i].DetailOptions.Count; j++)
+                            {
+                                string curr_option = @Model.ListFields[i].DetailOptions[j];
+                                @Html.Label(curr_option)
+                                @Html.RadioButtonFor(m => m.ListFields[i].Value, curr_option)
+                            }
+                            <br />
+                        }
+                        else
+                        {
+                            if (!Model.ListFields[i].isHidden && !Model.ListFields[i].Default)
+                            {
+                                
+                                @Model.ListFields[i].Label;
+                                @Html.HiddenFor(m => m.ListFields[i].Label)
+                                if (Model.ListFields[i].DataType == "DATA-PIN")
+                                {
+                                    if (count == 0){
+                                        @Html.PasswordFor(m => m.ListFields[i].Value, new { uifocus = "focus" })<br />
+                                        count++;
+                                    } else{
+                                        @Html.PasswordFor(m => m.ListFields[i].Value)<br />
+                                    }
+                                }
+                                else
+                                {
+                                    if (count == 0){
+                                        @Html.TextBoxFor(m => m.ListFields[i].Value, new { uifocus = "focus" })<br />
+                                        count++;
+                                    }
+                                    else
+                                    {
+                                        @Html.TextBoxFor(m => m.ListFields[i].Value)<br />
+                                    }
+                                }
+                            }
+                            else if (Model.ListFields[i].Default)
+                            {
+                                @Model.ListFields[i].Label;<br />
+                            }
+                        }
+
+                        // The hidden fields that will be passed to the Post method for submitting
+                        @Html.HiddenFor(m => m.ListFields[i].Value);
+                        @Html.HiddenFor(m => m.ListFields[i].Username);
+                        @Html.HiddenFor(m => m.ListFields[i].Token);
+                        @Html.HiddenFor(m => m.ListFields[i].Default);
+                        @Html.HiddenFor(m => m.ListFields[i].isHidden);
+                        @Html.HiddenFor(m => m.ListFields[i].HeaderToken);
+                        @Html.HiddenFor(m => m.ListFields[i].TubeType);
+                        @Html.HiddenFor(m => m.ListFields[i].ProductLine);
+                        @Html.HiddenFor(m => m.ListFields[i].DataType);
+                        @Html.HiddenFor(m => m.ListFields[i].Label);
+                        @Html.HiddenFor(m => m.ListFields[i].DetailOptionsString);
+
+                    }
+                    <br />
+                    <div id="button_loc">
+                    <input type="submit" value="Submit" class="submit_button" name="buttontype"/>
+                    <input type="submit" value="Clear" name="buttontype" class="submit_button"/><br /><br />
+                    </div>
+                    </fieldset>
+                }
+
+            
+        </div>
+}

@@ -1,0 +1,37 @@
+﻿@model VT.Models.VTPINModel
+
+<link href="@Url.Content("~/Content/MasterPageStyle.css")" rel="stylesheet" type="text/css" />
+@{
+    ViewBag.Title = "Password";
+    Layout = "~/Views/Shared/_VTFormLayout.cshtml";
+}
+
+<h2>Set Password</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary()
+    @Html.LabelFor(m => m.EmployeeID) <br />
+    @Html.EditorFor(m => m.EmployeeID, new { autocomplete = "off" })
+    <br /><br />
+    @Html.LabelFor(m => m.Pin) <br />
+    @Html.PasswordFor(m => m.Pin)
+    <br /><br />
+    @Html.LabelFor(m => m.PinVerification) <br />
+    @Html.PasswordFor(m => m.PinVerification) <br /><br />
+    <input type="submit" value="Submit" class="submit_button" name="buttontype"/>
+    
+    <div class="error_msg">
+    <strong>
+    @if (Model.Success)
+    {
+    <font color="green">@Model.DisplayMessage</font>
+    }
+    else
+    {
+    <font color="red">@Model.DisplayMessage</font>
+    }
+    </strong>
+    </div>
+    <br /><br /><br />
+}

@@ -1,0 +1,193 @@
+﻿<script type="text/javascript">
+    $(document).ready(function () {
+        $('input:text:first').focus();
+    });
+</script>
+@model VT.Models.VTReworkViewModel
+
+
+@{
+    ViewBag.Title = "ReworkForm";
+    // Layout = "~/Views/Shared/_VTFormLayout.cshtml";
+}
+
+<h2>Get Rework Form</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary()
+    int count = 0;
+
+             <fieldset>
+             <table id="main_table">
+                    <tr>
+                        <td>@Html.LabelFor(m => m.SerialNumber)</td>
+                        <td>@Html.LabelFor(m => m.EmployeeID)</td>
+                    </tr>
+                    <tr>
+                        <td>@Html.TextBoxFor(m => m.SerialNumber)</td>
+                        <td>@Html.EditorFor(m => m.EmployeeID)</td>
+                    </tr>
+                    <tr><td><input type="submit" value="Go" name="buttontype" class="submit_button"/><br /><br /></td></tr>
+             </table>
+             </fieldset>
+
+             <br /> 
+            <div class="error_msg"><strong>
+             @if (Model.Success)
+             {
+                <font color="green">@Model.DisplayMessage</font>
+             }
+             else
+             {
+                <font color="red">@Model.DisplayMessage</font>
+             }
+             </strong></div>
+
+             if (Model.Go)
+             {
+                 for (int i = 0; i < Model.ListForms.Count; i++)
+                 {
+                     using (Html.BeginForm())
+                     {
+                <fieldset>
+                <legend> @Model.ListForms[i].HeaderTitle |  @Model.ListForms[i].TubeType | @Model.ListForms[i].ProductLine </legend>    
+
+
+                @* Get's all of the hidden values *@
+                @Html.HiddenFor(m => m.ListForms[i].HeaderTitle)
+                @Html.HiddenFor(m => m.ListForms[i].HeaderTitle)
+                @Html.HiddenFor(m => m.ListForms[i].ProductLine)
+                @Html.HiddenFor(m => m.ListForms[i].TubeType)
+                @Html.HiddenFor(m => m.ListForms[i].HeaderToken)
+                @Html.HiddenFor(m => m.ListForms[i].HasActivity)
+                @Html.HiddenFor(m => m.EmployeeID)
+                @Html.HiddenFor(m => m.SerialNumber)
+                @Html.HiddenFor(m => m.SelectedHeaderToken, new { Value = Model.ListForms[i].HeaderToken })
+                @*@Html.HiddenFor(m => m.ReworkListFields) *@
+
+                @if (Model.ListForms[i].HasActivity != "")
+                {
+                     @Html.DisplayTextFor(m => m.ListForms[i].HasActivity)
+                     <br />
+                    if (Model.ListForms[i].Status == "1")
+                    {
+                         <img src="../../Content/pass_pic.png", alt="Edit" /><br />
+                    }
+                    else if (Model.ListForms[i].Status == "-1")
+                    {
+                         <img src="../../Content/fail_pic.png", alt="Edit" /><br />
+                    }
+
+                     <input type="submit" value="Rework" name="buttontype" class="submit_button"/>
+                     @*<input type="submit" value="Clear" name="buttontype" class="submit_button"/><br /><br />*@
+                }
+                </fieldset>
+                     }
+
+                 }
+
+             }
+
+             if (Model.Rework)
+             {
+                 <fieldset>
+                 <legend> @Model.ReworkListFields[0].HeaderName |  @Model.ReworkListFields[0].TubeType | @Model.ReworkListFields[0].ProductLine </legend>    
+            @for (int i = 0; i < Model.ReworkListFields.Count; i++)
+            {
+                if (Model.ReworkListFields[i].DataType == "DATA-CKBOX")
+                {
+                    if (Model.ReworkListFields[i].Value == "1")
+                    {
+                        Model.ReworkListFields[i].BoolValue = true;
+                    }
+                    else
+                    {
+                        Model.ReworkListFields[i].BoolValue = false;
+                    }
+                    @Model.ReworkListFields[i].Label;
+                    @Html.CheckBoxFor(m => m.ReworkListFields[i].BoolValue);
+                    <br />
+                }
+
+                else if (Model.ReworkListFields[i].DataType == "DATA-RADIO")
+                {
+                    for (int j = 0; j < Model.ReworkListFields[i].DetailOptions.Count; j++)
+                    {
+                        string curr_option = @Model.ReworkListFields[i].DetailOptions[j];
+                        @Html.Label(curr_option);
+                        @Html.RadioButtonFor(m => m.ReworkListFields[i].Value, curr_option);
+                    }
+                    <br />
+                }
+                else
+                {
+                    if (!Model.ReworkListFields[i].isHidden && !Model.ReworkListFields[i].Default)
+                    {
+                                
+                        @Model.ReworkListFields[i].Label;
+                        @Html.HiddenFor(m => m.ReworkListFields[i].Label)
+                        if (!Model.ReworkListFields[i].isHidden && !Model.ReworkListFields[i].Default)
+                        {
+                                
+                            @Model.ReworkListFields[i].Label;
+                            @Html.HiddenFor(m => m.ReworkListFields[i].Label)
+                            if (Model.ReworkListFields[i].DataType == "DATA-PIN")
+                            {
+                                if (count == 0)
+                                {
+                                    @Html.PasswordFor(m => m.ReworkListFields[i].Value, new { uifocus = "focus" })<br />
+                                    count++;
+                                }
+                                else
+                                {
+                                    @Html.PasswordFor(m => m.ReworkListFields[i].Value)<br />     
+                                }
+                            }
+                            else
+                            {
+                                if (count == 0)
+                                {
+                                    @Html.TextBoxFor(m => m.ReworkListFields[i].Value, new { uifocus = "focus" })<br />       
+                                    count++;
+                                }
+                                else
+                                {
+                                    @Html.TextBoxFor(m => m.ReworkListFields[i].Value)<br />
+                                }
+                            }
+                        }
+                    }
+                    else if (Model.ReworkListFields[i].Default)
+                    {
+                        @Model.ReworkListFields[i].Label;<br />
+                    }
+                }
+
+
+                // The hidden fields that will be passed to the Post method for submitting
+                
+                @Html.HiddenFor(m => m.ReworkListFields[i].Value);
+                @Html.HiddenFor(m => m.ReworkListFields[i].Token);
+                @Html.HiddenFor(m => m.ReworkListFields[i].Default);
+                @Html.HiddenFor(m => m.ReworkListFields[i].isHidden);
+                @Html.HiddenFor(m => m.ReworkListFields[i].HeaderToken);
+                @Html.HiddenFor(m => m.ReworkListFields[i].TubeType);
+                @Html.HiddenFor(m => m.ReworkListFields[i].ProductLine);
+                @Html.HiddenFor(m => m.ReworkListFields[i].DataType);
+                                                                   
+                @Html.HiddenFor(m => m.EmployeeID)
+                @Html.HiddenFor(m => m.SerialNumber)
+                @Html.HiddenFor(m => m.SelectedHeaderToken)
+           
+            }
+            <br />
+            <div id="button_loc">
+            <input type="submit" value="Update" class="submit_button" name="buttontype"/>
+            </div>
+            </fieldset>
+             }
+
+
+}
+

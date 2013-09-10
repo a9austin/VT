@@ -1,0 +1,10 @@
+C:\Users\atruong0\Documents\Visual Studio 2010\Projects\VT\VT\bin\VT.dll
+C:\Users\atruong0\Documents\Visual Studio 2010\Projects\VT\VT\bin\VT.pdb
+C:\Users\atruong0\Documents\Visual Studio 2010\Projects\VT\VT\bin\DocumentFormat.OpenXml.dll
+C:\Users\atruong0\Documents\Visual Studio 2010\Projects\VT\VT\bin\EntityFramework.dll
+C:\Users\atruong0\Documents\Visual Studio 2010\Projects\VT\VT\bin\itextsharp.dll
+C:\Users\atruong0\Documents\Visual Studio 2010\Projects\VT\VT\bin\DocumentFormat.OpenXml.xml
+C:\Users\atruong0\Documents\Visual Studio 2010\Projects\VT\VT\bin\EntityFramework.xml
+C:\Users\atruong0\Documents\Visual Studio 2010\Projects\VT\VT\obj\Release\ResolveAssemblyReference.cache
+C:\Users\atruong0\Documents\Visual Studio 2010\Projects\VT\VT\obj\Release\VT.dll
+C:\Users\atruong0\Documents\Visual Studio 2010\Projects\VT\VT\obj\Release\VT.pdb

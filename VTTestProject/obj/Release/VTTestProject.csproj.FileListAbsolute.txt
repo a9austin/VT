@@ -1,0 +1,12 @@
+C:\Users\atruong0\Documents\Visual Studio 2010\Projects\VT\VTTestProject\bin\Release\VTTestProject.dll
+C:\Users\atruong0\Documents\Visual Studio 2010\Projects\VT\VTTestProject\bin\Release\VTTestProject.pdb
+C:\Users\atruong0\Documents\Visual Studio 2010\Projects\VT\VTTestProject\bin\Release\EntityFramework.dll
+C:\Users\atruong0\Documents\Visual Studio 2010\Projects\VT\VTTestProject\bin\Release\VT.dll
+C:\Users\atruong0\Documents\Visual Studio 2010\Projects\VT\VTTestProject\bin\Release\itextsharp.dll
+C:\Users\atruong0\Documents\Visual Studio 2010\Projects\VT\VTTestProject\bin\Release\VT.pdb
+C:\Users\atruong0\Documents\Visual Studio 2010\Projects\VT\VTTestProject\bin\Release\EntityFramework.xml
+C:\Users\atruong0\Documents\Visual Studio 2010\Projects\VT\VTTestProject\bin\Release\VT_Accessor.dll
+C:\Users\atruong0\Documents\Visual Studio 2010\Projects\VT\VTTestProject\bin\Release\VT_Accessor.pdb
+C:\Users\atruong0\Documents\Visual Studio 2010\Projects\VT\VTTestProject\obj\Release\ResolveAssemblyReference.cache
+C:\Users\atruong0\Documents\Visual Studio 2010\Projects\VT\VTTestProject\obj\Release\VTTestProject.dll
+C:\Users\atruong0\Documents\Visual Studio 2010\Projects\VT\VTTestProject\obj\Release\VTTestProject.pdb
